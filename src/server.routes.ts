@@ -9,6 +9,5 @@
  * 'home', 'about'
  * ];
  **/
-export const routes: string[] = [
-
-];
+import { routes as clientRoutes } from './app/routes';
+export const routes: string[] = clientRoutes.map(r => r.path);

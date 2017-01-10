@@ -9,7 +9,11 @@
 import { NgModule } from '@angular/core';
 import { UniversalModule } from 'angular2-universal';
 import { FormsModule } from '@angular/forms';
-import { AppComponent } from './index';
+import { RouterModule } from '@angular/router';
+
+import { AppComponent, providers, routes } from './index';
+import { AppBarComponent, ColorPickerComponent, NoteCardComponent, NoteCreatorComponent } from './ui';
+import { AboutComponent, AuthComponent, MainComponent, NotesComponent } from './containers';
 // import { RouterModule } from '@angular/router';
 // import { appRoutes } from './app/app.routing';
 
@@ -18,21 +22,25 @@ import { AppComponent } from './index';
  */
 @NgModule({
   /** Root App Component */
-  bootstrap: [ AppComponent ],
+  bootstrap: [AppComponent],
   /** Our Components */
-  declarations: [ AppComponent ],
+  declarations: [AppComponent, AppBarComponent, ColorPickerComponent, NoteCardComponent, NoteCreatorComponent,
+    AboutComponent, AuthComponent, MainComponent, NotesComponent],
   imports: [
     /**
      * NOTE: Needs to be your first import (!)
      * BrowserModule, HttpModule, and JsonpModule are included
      */
     UniversalModule,
-    FormsModule
+    FormsModule,
+    // routes
+    RouterModule.forRoot(routes)
     /**
      * using routes
      */
     // RouterModule.forRoot(appRoutes)
-  ]
+  ],
+  providers: providers
 })
 export class AppModule {
 

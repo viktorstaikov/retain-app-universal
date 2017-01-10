@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "lodash": "^4.16.1",
     "@angular/common": "2.2.3",
     "@angular/compiler": "2.2.3",
     "@angular/core": "2.2.3",
